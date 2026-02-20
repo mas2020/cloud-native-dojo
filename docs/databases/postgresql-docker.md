@@ -55,7 +55,7 @@ docker run -d \
   -e POSTGRES_PASSWORD=appsecret \
   -e POSTGRES_DB=appdb \
   -p 5432:5432 \
-  -v pgdata:/var/lib/postgresql/data \
+  -v pgdata:/var/lib/postgresql \
   --restart unless-stopped \
   postgres:18
 ```
@@ -65,20 +65,36 @@ Why it matters:
 - Named volume preserves data across container restarts/recreation
 - `POSTGRES_*` values define initial user/database during first initialization
 
+Version note:
+
+- PostgreSQL Docker image `18+`: mount at `/var/lib/postgresql`
+- PostgreSQL Docker image `17` and below: mount at `/var/lib/postgresql/data`
+
 ### Check Container Health and Logs
 
 ```bash
 docker ps
 docker logs dojo-postgres --tail 100
 docker logs -f dojo-postgres
-docker inspect dojo-postgres --format '{{json .State.Health}}'
+docker inspect dojo-postgres --format '{{.State.Status}}'
 docker exec dojo-postgres pg_isready -U appuser -d appdb
 ```
 
 Why it matters:
 
-- Confirms the server is actually ready to accept connections
+- Confirms container state and database readiness separately
 - Startup logs usually reveal auth, config, or init-script issues quickly
+
+Note:
+
+- `docker inspect ... '{{json .State.Health}}'` returns `null` unless a healthcheck is explicitly configured for the container.
+- `pg_isready` is the reliable readiness check even when Docker healthcheck is not configured.
+
+Optional (if you configured `--health-cmd` on `docker run`):
+
+```bash
+docker inspect dojo-postgres --format '{{json .State.Health}}'
+```
 
 ### Connect with `psql`
 
@@ -112,6 +128,12 @@ Run a local SQL file:
 ```bash
 cat schema.sql | docker exec -i dojo-postgres psql -U appuser -d appdb
 ```
+
+What `schema.sql` is:
+
+- A plain SQL file in your project (for example `./db/schema.sql`)
+- Usually contains DDL statements such as `CREATE TABLE`, `CREATE INDEX`, and optional seed inserts
+- Used to bootstrap a database structure consistently across local/dev/CI environments
 
 Why it matters:
 
@@ -183,7 +205,7 @@ Why it matters:
 ### Copy Files Between Host and Container
 
 ```bash
-docker cp dojo-postgres:/var/lib/postgresql/data /tmp/pgdata-copy
+docker cp dojo-postgres:/var/lib/postgresql /tmp/postgresql-copy
 docker cp ./seed.sql dojo-postgres:/tmp/seed.sql
 docker exec -i dojo-postgres psql -U appuser -d appdb -f /tmp/seed.sql
 ```
@@ -224,7 +246,7 @@ docker run -d \
   -e POSTGRES_PASSWORD=appsecret \
   -e POSTGRES_DB=appdb \
   -p 5432:5432 \
-  -v pgdata:/var/lib/postgresql/data \
+  -v pgdata:/var/lib/postgresql \
   -v "$(pwd)/init:/docker-entrypoint-initdb.d" \
   postgres:18
 ```
