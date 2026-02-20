@@ -19,7 +19,7 @@ Production-focused.
 
 ## Website
 
-Live version: https://YOUR_USERNAME.github.io/cloud-native-field-guide/
+Live version: https://mas2020.github.io/cloud-native-dojo/
 
 ## Contributing
 
