@@ -7,6 +7,7 @@ This project is an opinionated, production-oriented guide covering:
 - Linux foundations
 - Containers
 - Kubernetes
+- Databases
 - GitOps
 - Infrastructure as Code
 - Real-world troubleshooting patterns
@@ -28,9 +29,10 @@ This guide follows a layered mental model:
 1. Foundations (Linux, networking, debugging)
 2. Containers
 3. Kubernetes
-4. Packaging and GitOps
-5. Infrastructure
-6. Troubleshooting scenarios
+4. Databases
+5. Packaging and GitOps
+6. Infrastructure
+7. Troubleshooting scenarios
 
 Each section prioritizes:
 
@@ -79,6 +81,17 @@ Production-focused reference including:
 - Storage
 - Configuration
 - Debugging workflows
+
+---
+
+### Databases
+
+Operational reference for:
+
+- PostgreSQL in Docker
+- Connection and authentication checks
+- Backup and restore commands
+- Initialization and data persistence behavior
 
 ---
 

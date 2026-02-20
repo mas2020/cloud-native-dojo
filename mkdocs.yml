@@ -51,6 +51,10 @@ nav:
   #     - Configuration: kubernetes/configuration.md
   #     - Debugging: kubernetes/debugging.md
 
+  - Databases:
+      - Overview: databases/index.md
+      - PostgreSQL with Docker: databases/postgresql-docker.md
+
   # - Local Clusters:  # missing section files
   #     - Overview: local-clusters/index.md
   #     - kind: local-clusters/kind.md
