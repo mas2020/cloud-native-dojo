@@ -41,15 +41,15 @@ nav:
   #     - Networking: containers/networking.md
   #     - Troubleshooting: containers/troubleshooting.md
 
-  # - Kubernetes:  # missing section files
-  #     - Overview: kubernetes/index.md
-  #     - Kubectl: kubernetes/kubectl.md
-  #     - Core Resources: kubernetes/core-resources.md
-  #     - Deployments: kubernetes/deployments.md
-  #     - Services & Networking: kubernetes/services-networking.md
-  #     - Storage: kubernetes/storage.md
-  #     - Configuration: kubernetes/configuration.md
-  #     - Debugging: kubernetes/debugging.md
+  - Kubernetes:
+      - Overview: kubernetes/index.md
+      - Deployments: kubernetes/deployments.md
+      # - Kubectl: kubernetes/kubectl.md  # missing
+      # - Core Resources: kubernetes/core-resources.md  # missing
+      # - Services & Networking: kubernetes/services-networking.md  # missing
+      # - Storage: kubernetes/storage.md  # missing
+      # - Configuration: kubernetes/configuration.md  # missing
+      # - Debugging: kubernetes/debugging.md  # missing
 
   - Databases:
       - Overview: databases/index.md
