@@ -1,0 +1,80 @@
+site_name: Cloud Native Dojo
+site_description: Practical Cloud Native Command and Operations Reference
+repo_url: https://github.com/mas2020/cloud-native-dojo
+repo_name: cloud-native-dojo
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+
+  - Foundations:
+      - Overview: foundations/index.md
+      # - Filesystem: foundations/filesystem.md  # missing
+      # - Processes: foundations/processes.md  # missing
+      - Networking: foundations/networking.md
+      # - Logs: foundations/logs.md  # missing
+      # - Text Processing: foundations/text-processing.md  # missing
+      # - Debugging: foundations/debugging.md  # missing
+
+  # - Containers:  # missing section files
+  #     - Overview: containers/index.md
+  #     - Docker CLI: containers/docker-cli.md
+  #     - Images: containers/images.md
+  #     - Volumes: containers/volumes.md
+  #     - Networking: containers/networking.md
+  #     - Troubleshooting: containers/troubleshooting.md
+
+  # - Kubernetes:  # missing section files
+  #     - Overview: kubernetes/index.md
+  #     - Kubectl: kubernetes/kubectl.md
+  #     - Core Resources: kubernetes/core-resources.md
+  #     - Deployments: kubernetes/deployments.md
+  #     - Services & Networking: kubernetes/services-networking.md
+  #     - Storage: kubernetes/storage.md
+  #     - Configuration: kubernetes/configuration.md
+  #     - Debugging: kubernetes/debugging.md
+
+  # - Local Clusters:  # missing section files
+  #     - Overview: local-clusters/index.md
+  #     - kind: local-clusters/kind.md
+  #     - Minikube: local-clusters/minikube.md
+
+  # - Packaging:  # missing section files
+  #     - Overview: packaging/index.md
+  #     - Helm: packaging/helm.md
+  #     - Kustomize: packaging/kustomize.md
+
+  # - GitOps & CI/CD:  # missing section files
+  #     - Overview: gitops-cicd/index.md
+  #     - GitHub Actions: gitops-cicd/github-actions.md
+  #     - Argo CD: gitops-cicd/argo-cd.md
+
+  # - Infrastructure:  # missing section files
+  #     - Overview: infrastructure/index.md
+  #     - Terraform: infrastructure/terraform.md
+
+  # - Troubleshooting Scenarios:  # missing section files
+  #     - Overview: troubleshooting/index.md
+  #     - Container Not Starting: troubleshooting/container-not-starting.md
+  #     - Pod CrashLoop: troubleshooting/pod-crashloop.md
+  #     - Service Not Reachable: troubleshooting/service-not-reachable.md
+  #     - High CPU/Memory: troubleshooting/high-cpu-memory.md
+
+  # - Glossary: glossary.md  # missing
