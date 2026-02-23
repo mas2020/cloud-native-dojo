@@ -44,6 +44,17 @@ Understand:
 
 ---
 
+### DaemonSets
+
+Understand:
+
+- How to run one Pod per eligible node
+- How update strategy affects node-agent rollouts
+- How to verify node coverage and placement
+- How to debug scheduling and rollout failures quickly
+
+---
+
 ## Guiding Principle
 
 When debugging Kubernetes:

@@ -77,6 +77,7 @@ Production-focused reference including:
 - kubectl commands
 - Core resources
 - Deployments
+- DaemonSets
 - Services and networking
 - Storage
 - Configuration

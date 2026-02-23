@@ -290,10 +290,22 @@ Use this flow for Deployment incidents:
 
 Diagnostic shortcuts:
 
-- `ProgressDeadlineExceeded`: rollout is stalled; inspect probes, pull errors, quota, scheduling
+- `ProgressDeadlineExceeded`: the Deployment did not make enough rollout progress before `.spec.progressDeadlineSeconds` elapsed.
+  This usually means new Pods are not becoming Ready (or not being created/scheduled) fast enough.
+  It does not auto-rollback by itself; you still decide whether to wait, fix-forward, or rollback.
 - Pods `ImagePullBackOff`: image/tag/auth issue, not Deployment logic
 - Pods `CrashLoopBackOff`: app/runtime issue; Deployment is only surfacing the failure
 - Desired replicas present but unavailable remains high: readiness gate is blocking promotion
+
+Quick verification for `ProgressDeadlineExceeded`:
+
+```bash
+kubectl describe deployment web
+kubectl get deployment web -o jsonpath='{.spec.progressDeadlineSeconds}{"\n"}'
+kubectl get deployment web -o jsonpath='{range .status.conditions[*]}{.type}={.status} reason={.reason} message={.message}{"\n"}{end}'
+kubectl get pods -l app=web
+kubectl describe pod -l app=web
+```
 
 ---
 
