@@ -61,7 +61,8 @@ Why it matters:
 ```bash
 kubectl auth can-i create pods -n dev
 kubectl auth can-i list deployments.apps -n prod
-kubectl auth can-i get /healthz
+kubectl auth can-i get /livez
+kubectl auth can-i get /readyz
 kubectl auth can-i --list -n dev
 ```
 
@@ -75,6 +76,11 @@ Why it matters:
 
 - Fastest practical check for authorization behavior
 - Uses server-side review APIs and works across authorization modes
+
+Note:
+
+- Prefer `/livez` and `/readyz` for API server health-related non-resource checks.
+- `/healthz` is deprecated.
 
 ### Create Namespace-Scoped RBAC (Role + RoleBinding)
 
