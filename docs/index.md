@@ -78,6 +78,7 @@ Production-focused reference including:
 - Core resources
 - Deployments
 - DaemonSets
+- Authentication and authorization
 - Services and networking
 - Storage
 - Configuration

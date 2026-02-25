@@ -55,6 +55,17 @@ Understand:
 
 ---
 
+### Authentication and Authorization
+
+Understand:
+
+- How API requests are authenticated and authorized
+- How to validate effective permissions with `kubectl auth can-i`
+- How to apply least-privilege RBAC with Roles and Bindings
+- How to troubleshoot `401 Unauthorized` vs `403 Forbidden` quickly
+
+---
+
 ## Guiding Principle
 
 When debugging Kubernetes:

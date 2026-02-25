@@ -45,6 +45,7 @@ nav:
       - Overview: kubernetes/index.md
       - Deployments: kubernetes/deployments.md
       - DaemonSets: kubernetes/daemonsets.md
+      - Authentication & Authorization: kubernetes/authentication-authorization.md
       # - Kubectl: kubernetes/kubectl.md  # missing
       # - Core Resources: kubernetes/core-resources.md  # missing
       # - Services & Networking: kubernetes/services-networking.md  # missing
