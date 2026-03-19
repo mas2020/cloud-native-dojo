@@ -8,6 +8,7 @@ This project is an opinionated, production-oriented guide covering:
 - Containers
 - Kubernetes
 - Databases
+- Programming languages and toolchains
 - GitOps
 - Infrastructure as Code
 - Real-world troubleshooting patterns
@@ -30,9 +31,10 @@ This guide follows a layered mental model:
 2. Containers
 3. Kubernetes
 4. Databases
-5. Packaging and GitOps
-6. Infrastructure
-7. Troubleshooting scenarios
+5. Programming languages and toolchains
+6. Packaging and GitOps
+7. Infrastructure
+8. Troubleshooting scenarios
 
 Each section prioritizes:
 
@@ -94,6 +96,14 @@ Operational reference for:
 - Connection and authentication checks
 - Backup and restore commands
 - Initialization and data persistence behavior
+
+---
+
+### Programming
+
+Toolchain setup and operational reference for programming languages used in cloud-native environments:
+
+- Go installation and version management on Ubuntu
 
 ---
 

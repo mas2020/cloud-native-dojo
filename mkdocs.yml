@@ -57,6 +57,10 @@ nav:
       - Overview: databases/index.md
       - PostgreSQL with Docker: databases/postgresql-docker.md
 
+  - Programming:
+      - Overview: programming/index.md
+      - Installing Go on Ubuntu: programming/install-golang.md
+
   # - Local Clusters:  # missing section files
   #     - Overview: local-clusters/index.md
   #     - kind: local-clusters/kind.md
